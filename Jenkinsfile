@@ -24,7 +24,7 @@ pipeline {
         stage ('terraform apply') {
             steps{
                 dir ('app_db/rds')
-                    sh "terraform apply"
+                    sh "terraform apply auto-appruve"
             }
         }
     }    
