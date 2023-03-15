@@ -17,17 +17,19 @@ pipeline {
         }
         stage ('terraform plan') {
             steps{
-                dir ('app_db/rds')
+                dir ('app_db/rds'){
                     sh "terraform plan"
+                }
             }
         }
         stage ('terraform apply') {
             steps{
-                dir ('app_db/rds')
+                dir ('app_db/rds'){
                     sh "terraform apply auto-appruve"
             }
         }
-    }    
+    } 
+}   
     post { 
         always {
             echo "### CLEARNING WORKSPACE ###"
