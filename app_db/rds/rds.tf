@@ -1,5 +1,5 @@
 module "rds_db" {
-  source                   = "../../modules/db_module/"
+  source                   = "github.com/sanijoi/MODULES/modules/db_module"
   allocated_storage        = 10
   db_name                  = "myrds"
   engine                   = "mysql"
