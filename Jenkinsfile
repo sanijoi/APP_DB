@@ -8,6 +8,12 @@ pipeline {
                 }
             }
         }
+        stage('checkov check') {
+            steps {
+                dir ('app_db')
+                sh "checkov -d ."
+            }
+        }
         stage ('terraform validate') {
             steps {
                 dir ('app_db/rds') {
